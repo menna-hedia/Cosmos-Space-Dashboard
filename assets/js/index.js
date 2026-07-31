@@ -236,7 +236,7 @@ async function getLaunches() {
                       class="flex items-center justify-center h-full min-h-[400px] bg-slate-800"
                     >
                       <img
-    src="${data.results[0].image.image_url}"
+    src="${data.results[0].image?.image_url || "./assets/images/launch-placeholder.png"}"
     class="w-full h-full object-cover"
     alt="${data.results[0].name}"
 />
@@ -274,8 +274,8 @@ async function getLaunches() {
             class="relative h-48 bg-slate-900/50 flex items-center justify-center"
         >
 <img
-    src="${launch.image?.image_url || 'https://cosmos-space-dashboard-route.vercel.app/images/launch-placeholder.png'}"
-    onerror="this.onerror=null;this.src='https://cosmos-space-dashboard-route.vercel.app/images/launch-placeholder.png';"
+    src="${launch.image?.image_url || "./assets/images/launch-placeholder.png"}"
+    onerror="this.onerror=null;this.src="./assets/images/launch-placeholder.png";"
     class="w-full h-full object-cover"
     alt="${launch.name}"
 >
@@ -297,7 +297,7 @@ async function getLaunches() {
 
                 <p class="text-sm text-slate-400 flex items-center gap-2">
                     <i class="fas fa-building text-xs"></i>
-                    ${launch.launch_service_provider.name}
+                    ${launch.launch_service_provider?.name || "Unknown"}
                 </p>
             </div>
 
@@ -316,14 +316,14 @@ async function getLaunches() {
                 <div class="flex items-center gap-2 text-sm">
                     <i class="fas fa-rocket text-slate-500 w-4"></i>
                     <span class="text-slate-300">
-                        ${launch.rocket.configuration.name}
+                        ${launch.rocket?.configuration?.name || "Unknown"}
                     </span>
                 </div>
 
                 <div class="flex items-center gap-2 text-sm">
                     <i class="fas fa-map-marker-alt text-slate-500 w-4"></i>
                     <span class="text-slate-300 line-clamp-1">
-                        ${launch.pad.location.name}
+                        ${launch.pad?.location?.name || "Unknown"}
                     </span>
                 </div>
 
