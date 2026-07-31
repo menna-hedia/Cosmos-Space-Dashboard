@@ -274,12 +274,11 @@ async function getLaunches() {
             class="relative h-48 bg-slate-900/50 flex items-center justify-center"
         >
 <img
-    src="${launch.image?.image_url || "./assets/images/launch-placeholder.png"}"
-    onerror="this.onerror=null;this.src="./assets/images/launch-placeholder.png";"
-    class="w-full h-full object-cover"
-    alt="${launch.name}"
+ src="${launch.image?.image_url || './assets/images/launch-placeholder.png'}"
+ onerror="this.onerror=null;this.src='./assets/images/launch-placeholder.png';"
+ class="w-full h-full object-cover"
+ alt="${launch.name}"
 >
-}
 
             <div class="absolute top-3 right-3">
                 <span class="px-3 py-1 bg-green-500/90 text-white rounded-full text-xs font-semibold">
